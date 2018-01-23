@@ -12,13 +12,13 @@ axios.interceptors.request.use(function (config) {
   return Promise.reject(error)
 })
 // 登录功能
-export const loginn = (params) => {
+export const login = (params) => {
   return axios.post('login', params).then(res => {
     return res.data
   })
 }
 export const testData = (params) => {
-  return axios.post('login', params).then(res => {
+  return axios.get('users', {params: params}).then(res => {
     return res.data
   })
 }
